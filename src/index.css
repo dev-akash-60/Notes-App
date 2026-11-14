@@ -1,35 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 
+/* =========================================
+   1. COLOR VARIABLES & THEME
+========================================= */
+
 :root {
   font-family: 'DM Sans', sans-serif;
-  color: #25242a;
-  background: #f8f8f7;
+  color: #24213a;
+  background: #f7f6ff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --bg: #f8f8f7;
-  --surface: #fff;
-  --surface-soft: #f4f3f1;
-  --text: #26252b;
-  --muted: #929098;
-  --line: #eae9e7;
-  --accent: #7665c9;
-  --accent-soft: #f0edff;
-  --shadow: 0 8px 28px rgba(34, 31, 48, .045);
+
+  --bg: #f7f6ff;
+  --surface: #ffffff;
+  --surface-soft: #f0effb;
+  --text: #24213a;
+  --muted: #817f99;
+  --line: #e8e5f5;
+  --accent: #7257e8;
+  --accent-soft: #eeeaff;
+  --shadow: 0 10px 30px rgba(79, 63, 150, .07);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #17171b;
-  --surface: #202025;
-  --surface-soft: #29282f;
-  --text: #f1eff5;
-  --muted: #a09daa;
-  --line: #34323a;
-  --accent: #a99be9;
-  --accent-soft: #302b43;
-  --shadow: 0 8px 28px rgba(0, 0, 0, .18);
+
+  --bg: #151326;
+  --surface: #201d35;
+  --surface-soft: #2b2745;
+  --text: #f4f0ff;
+  --muted: #aaa4c6;
+  --line: #393452;
+  --accent: #ad9aff;
+  --accent-soft: #342c58;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .22);
 }
+
+/* =========================================
+   2. GLOBAL STYLES
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -66,6 +76,10 @@ select:focus-visible,
   display: flex;
   background: var(--bg);
 }
+
+/* =========================================
+   3. SIDEBAR
+========================================= */
 
 .sidebar {
   width: 252px;
@@ -109,8 +123,8 @@ select:focus-visible,
   place-items: center;
   color: white;
   border-radius: 10px;
-  background: linear-gradient(145deg, #9889e7, #6d5bc1);
-  box-shadow: 0 4px 12px #8372d44d;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4);
+  box-shadow: 0 5px 16px #7656e94a;
 }
 
 .brand-name {
@@ -150,6 +164,8 @@ select:focus-visible,
   display: none;
 }
 
+/* New Note Button */
+
 .new-note-button {
   width: 100%;
   height: 43px;
@@ -160,8 +176,8 @@ select:focus-visible,
   border: 0;
   border-radius: 10px;
   color: white;
-  background: #7564c7;
-  box-shadow: 0 5px 14px #7564c733;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4);
+  box-shadow: 0 7px 18px #7656e933;
   font-weight: 600;
   font-size: 13px;
   transition: .2s;
@@ -170,7 +186,7 @@ select:focus-visible,
 .new-note-button:hover,
 .primary-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px #7564c744;
+  box-shadow: 0 8px 18px #7656e944;
 }
 
 .new-note-button kbd,
@@ -183,6 +199,8 @@ select:focus-visible,
   padding: 3px 5px;
   border-radius: 5px;
 }
+
+/* Navigation */
 
 .nav-label {
   color: #aaa8b0;
@@ -220,8 +238,8 @@ select:focus-visible,
 }
 
 .nav-item.active {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: #7655dc;
+  background: linear-gradient(100deg, #f0eaff, #e8f2ff);
   font-weight: 600;
 }
 
@@ -271,6 +289,8 @@ select:focus-visible,
   color: var(--accent);
   padding: 0 8px;
 }
+
+/* Sidebar Bottom */
 
 .sidebar-bottom {
   margin-top: auto;
@@ -333,8 +353,8 @@ select:focus-visible,
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #e8e1d8;
-  color: #6e5b4a;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  color: #55417d;
   font-size: 11px;
   font-weight: 700;
 }
@@ -357,6 +377,10 @@ select:focus-visible,
 .muted-icon {
   color: var(--muted);
 }
+
+/* =========================================
+   4. MAIN AREA & TOPBAR
+========================================= */
 
 .main-area {
   min-width: 0;
@@ -412,6 +436,10 @@ select:focus-visible,
   height: 29px;
 }
 
+/* =========================================
+   5. DASHBOARD
+========================================= */
+
 .content-area {
   max-width: 1260px;
   margin: 0 auto;
@@ -426,7 +454,7 @@ select:focus-visible,
 }
 
 .eyebrow {
-  color: var(--accent);
+  color: #8058df;
   font-size: 9px;
   letter-spacing: 1.55px;
   font-weight: 700;
@@ -452,6 +480,8 @@ h1 {
   margin-bottom: 0;
 }
 
+/* Primary Button */
+
 .primary-button {
   height: 40px;
   display: inline-flex;
@@ -461,13 +491,15 @@ h1 {
   padding: 0 16px;
   border: 0;
   border-radius: 9px;
-  background: #7564c7;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4);
   color: white;
   font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 4px 12px #7564c72b;
+  box-shadow: 0 7px 18px #7656e933;
   transition: .2s;
 }
+
+/* Dashboard Statistics */
 
 .stats-strip {
   display: flex;
@@ -497,17 +529,17 @@ h1 {
 
 .stat-icon.lavender {
   color: #7969c9;
-  background: #f0edff;
+  background: #eee7ff;
 }
 
 .stat-icon.peach {
-  color: #c18b68;
-  background: #fff0e7;
+  color: #db804c;
+  background: #ffeadc;
 }
 
 .stat-icon.sage {
-  color: #6e9b7b;
-  background: #eaf3eb;
+  color: #159b83;
+  background: #dcf7ed;
 }
 
 .stat-card strong,
@@ -524,6 +556,10 @@ h1 {
   font-size: 9px;
   margin-top: 2px;
 }
+
+/* =========================================
+   6. SEARCH & TOOLBAR
+========================================= */
 
 .notes-toolbar {
   display: flex;
@@ -548,8 +584,8 @@ h1 {
 }
 
 .search-box:focus-within {
-  border-color: #b7addf;
-  box-shadow: 0 0 0 3px #8978d414;
+  border-color: #a99af0;
+  box-shadow: 0 0 0 3px #8b5cf61c;
 }
 
 .search-box input {
@@ -626,6 +662,8 @@ h1 {
   background: var(--accent-soft);
 }
 
+/* Dropdown Menus */
+
 .sort-wrap,
 .color-picker-wrap,
 .editor-folder-wrap {
@@ -664,6 +702,10 @@ h1 {
   background: var(--surface-soft);
 }
 
+/* =========================================
+   7. NOTES SECTION
+========================================= */
+
 .section-heading {
   display: flex;
   align-items: center;
@@ -700,20 +742,28 @@ h1 {
   padding-left: 4px;
 }
 
+/* Notes Grid */
+
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 15px;
 }
 
+/* Individual Note Card */
+
 .note-card {
   min-height: 205px;
   display: flex;
   flex-direction: column;
   padding: 16px 17px 13px;
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--note-color) 72%, #e8e5f5);
   border-radius: 12px;
-  background: var(--surface);
+
+  background: linear-gradient(145deg,
+      color-mix(in srgb, var(--note-color) 48%, white),
+      white 82%);
+
   box-shadow: var(--shadow);
   cursor: pointer;
   transition: transform .2s, box-shadow .2s, border-color .2s;
@@ -722,15 +772,17 @@ h1 {
 
 .note-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(34, 31, 48, .09);
-  border-color: #d9d4e8;
+  border-color: color-mix(in srgb, var(--note-color) 70%, #8b5cf6);
+  box-shadow: 0 15px 32px rgba(91, 69, 166, .13);
 }
 
 .note-card::before {
   content: "";
-  height: 3px;
+  height: 5px;
   margin: -16px -17px 14px;
-  background: var(--note-color);
+  background: linear-gradient(90deg,
+      var(--note-color),
+      color-mix(in srgb, var(--note-color) 45%, #8b5cf6));
 }
 
 .note-card-top {
@@ -843,6 +895,8 @@ h1 {
   color: #c47b7b;
 }
 
+/* List View */
+
 .list-view {
   display: flex;
   flex-direction: column;
@@ -895,6 +949,10 @@ h1 {
   display: none;
 }
 
+/* =========================================
+   8. EMPTY STATE
+========================================= */
+
 .empty-state {
   min-height: 300px;
   display: flex;
@@ -920,9 +978,9 @@ h1 {
   width: 45px;
   height: 54px;
   padding: 16px 9px;
-  border: 1px solid #ded8f2;
+  border: 1px solid #d8caff;
   border-radius: 7px;
-  background: #f5f2ff;
+  background: linear-gradient(145deg, #eee5ff, #dceeff);
   transform: rotate(-7deg);
   box-shadow: 0 8px 15px #6f60aa1c;
 }
@@ -930,7 +988,7 @@ h1 {
 .empty-paper span {
   display: block;
   height: 2px;
-  background: #d8d0f0;
+  background: #b7a7ee;
   border-radius: 2px;
   margin-bottom: 5px;
 }
@@ -956,6 +1014,10 @@ h1 {
 .floating-create {
   display: none;
 }
+
+/* =========================================
+   9. NOTE EDITOR
+========================================= */
 
 .editor-page {
   max-width: 930px;
@@ -1003,12 +1065,18 @@ h1 {
   gap: 3px;
 }
 
+/* Editor Paper */
+
 .editor-paper {
   min-height: 72vh;
   padding: 35px clamp(24px, 6vw, 75px) 25px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: var(--surface);
+
+  background: linear-gradient(150deg,
+      color-mix(in srgb, var(--note-color) 24%, white),
+      white 32%);
+
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -1019,9 +1087,12 @@ h1 {
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 6px;
   border-radius: 14px 14px 0 0;
-  background: var(--note-color);
+  background: linear-gradient(90deg,
+      var(--note-color),
+      #8b5cf6,
+      #06b6d4);
 }
 
 .editor-meta {
@@ -1059,6 +1130,8 @@ h1 {
   margin-top: 4px;
 }
 
+/* Editor Title */
+
 .editor-title {
   width: 100%;
   border: 0;
@@ -1074,6 +1147,8 @@ h1 {
 .editor-title::placeholder {
   color: #c7c4cc;
 }
+
+/* Formatting Toolbar */
 
 .format-toolbar {
   display: flex;
@@ -1103,6 +1178,8 @@ h1 {
   background: var(--line);
 }
 
+/* Color Picker */
+
 .color-popover {
   position: absolute;
   top: 36px;
@@ -1118,16 +1195,19 @@ h1 {
 }
 
 .color-popover button {
-  width: 22px;
-  height: 22px;
-  border: 1px solid #00000012;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ffffff;
   border-radius: 50%;
+  box-shadow: 0 0 0 1px #d8d3e8;
 }
 
 .color-popover button.color-selected {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* Rich Text Area */
 
 .rich-editor {
   min-height: 330px;
@@ -1171,6 +1251,10 @@ h1 {
   color: #d16f75;
   background: #d16f7512;
 }
+
+/* =========================================
+   10. SETTINGS PAGE
+========================================= */
 
 .settings-page {
   max-width: 760px;
@@ -1253,6 +1337,10 @@ h1 {
   display: none;
 }
 
+/* =========================================
+   11. RESPONSIVE: TABLET
+========================================= */
+
 @media (max-width: 1050px) {
   .content-area {
     padding: 38px 32px 60px;
@@ -1267,9 +1355,14 @@ h1 {
   }
 
   .note-row {
-    grid-template-columns: 110px minmax(110px, 1fr) minmax(100px, 1.5fr) auto;
+    grid-template-columns:
+      110px minmax(110px, 1fr) minmax(100px, 1.5fr) auto;
   }
 }
+
+/* =========================================
+   12. RESPONSIVE: MOBILE
+========================================= */
 
 @media (max-width: 700px) {
   .sidebar {
@@ -1458,8 +1551,8 @@ h1 {
     border: 0;
     border-radius: 18px;
     color: white;
-    background: #7564c7;
-    box-shadow: 0 8px 24px #7564c755;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4);
+    box-shadow: 0 8px 24px #7656e955;
   }
 
   .editor-page {
@@ -1488,6 +1581,10 @@ h1 {
   }
 }
 
+/* =========================================
+   13. SMALL MOBILE DEVICES
+========================================= */
+
 @media (max-width: 380px) {
   .notes-grid {
     grid-template-columns: 1fr;
@@ -1505,4 +1602,29 @@ h1 {
   .toolbar-button span {
     display: none;
   }
+}
+
+/* =========================================
+   14. DARK MODE COLOR DETAILS
+========================================= */
+
+:root[data-theme="dark"] .note-card {
+  background: linear-gradient(145deg,
+      color-mix(in srgb, var(--note-color) 20%, #201d35),
+      #201d35 82%);
+
+  border-color: color-mix(in srgb,
+      var(--note-color) 30%,
+      #393452);
+}
+
+:root[data-theme="dark"] .editor-paper {
+  background: linear-gradient(150deg,
+      color-mix(in srgb, var(--note-color) 12%, #201d35),
+      #201d35 35%);
+}
+
+:root[data-theme="dark"] .nav-item.active {
+  color: #c0b0ff;
+  background: linear-gradient(100deg, #342c58, #25364f);
 }
