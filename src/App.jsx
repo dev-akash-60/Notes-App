@@ -418,7 +418,7 @@ export default function App() {
           </div>
 
           <span className="brand-name">
-            folio<span>.</span>
+            MindMemo<span>✒️</span>
           </span>
 
           <button
